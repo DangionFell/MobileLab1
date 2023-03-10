@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Главная"
+        android:id="@+id/main"
+        android:icon="@drawable/yandex_znak"/>
+    <item android:title="Ролики"
+        android:id="@+id/videos"
+        android:icon="@drawable/play"/>
+    <item android:title="Интересное"
+        android:icon="@drawable/interesting"
+        android:id="@+id/interest"/>
+</menu>

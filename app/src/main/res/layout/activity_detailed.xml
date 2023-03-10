@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailedActivity"
+    android:background="#D3D3D3">
+
+    <!--TopBarLayout-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_bar_left" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Дзен"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFFFFF"
+                    android:onClick="onClickToLink"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_bar_right" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--MainScreen-->
+    <ScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--BigCard-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Вот что у нас есть на эту тему"
+                        android:paddingTop="10dp"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Как устроен этот мир"
+                        android:paddingTop="10dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <!--SmallCar1d-->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="370dp"
+                                android:layout_height="450dp"
+                                android:padding="10dp"
+                                app:cardCornerRadius="15dp"
+                                app:strokeColor="#363739"
+                                app:strokeWidth="1dp"
+                                android:layout_marginRight="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <RelativeLayout
+                                        android:id="@+id/header1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/img"
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_marginBottom="10dp"
+
+                                            android:src="@drawable/rbth"
+
+                                            app:strokeColor="@android:color/darker_gray"
+                                            app:strokeWidth="0dp" />
+
+                                        <TextView
+                                            android:id="@+id/nickname"
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toEndOf="@id/img"
+                                            android:textColor="#000000"
+
+                                            android:text="Russia Beyond"
+                                            android:textSize="16sp"/>
+
+                                        <TextView
+                                            android:id="@+id/subscribers"
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/nickname"
+                                            android:layout_alignStart="@+id/nickname"
+
+                                            android:text="98 тыс. подписчиков"
+                                            android:textColor="#757575"
+                                            android:textSize="12sp"
+                                            tools:ignore="TextContrastCheck" />
+
+                                        <ImageButton
+                                            android:id="@+id/more"
+                                            android:layout_width="wrap_content"
+
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:background="?android:attr/selectableItemBackground"
+                                            android:layout_marginRight="15dp"
+
+
+                                            android:src="@drawable/more"
+                                            tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml,ImageContrastCheck" />
+
+                                    </RelativeLayout>
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="210dp"
+                                        android:src="@drawable/men"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop">
+                                    </com.google.android.material.imageview.ShapeableImageView>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Зачем карельский архитектор\nкарабкается по скалам и высекает\nбарельефы зайцев?"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="18.5dp"
+                                        android:padding="10dp">
+                                    </TextView>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Первое, что приходит в голову при виде..."
+                                        android:textSize="16dp"
+                                        android:paddingLeft="10dp">
+                                    </TextView>
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:layout_width="match_parent"
+                                        android:layout_height="60dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginRight="10dp"
+                                        app:cornerRadius="15dp"
+                                        android:backgroundTint="#FBCC01"
+                                        android:textAllCaps="false"
+                                        android:text="Подписаться"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold"
+                                        android:textSize="16dp">
+
+                                    </com.google.android.material.button.MaterialButton>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <!--SmallCar1d2-->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="370dp"
+                                android:layout_height="450dp"
+                                android:padding="10dp"
+                                app:cardCornerRadius="15dp"
+                                app:strokeColor="#363739"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <RelativeLayout
+                                        android:id="@+id/header2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/img1"
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_marginBottom="10dp"
+
+                                            android:src="@drawable/rbth"
+
+                                            app:strokeColor="@android:color/darker_gray"
+                                            app:strokeWidth="0dp" />
+
+                                        <TextView
+                                            android:id="@+id/nickname1"
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toEndOf="@id/img1"
+                                            android:textColor="#000000"
+
+                                            android:text="Russia Beyond"
+                                            android:textSize="16sp"/>
+
+                                        <TextView
+                                            android:id="@+id/subscribers1"
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/nickname1"
+                                            android:layout_alignStart="@+id/nickname1"
+
+                                            android:text="98 тыс. подписчиков"
+                                            android:textColor="#757575"
+                                            android:textSize="12sp"
+                                            tools:ignore="TextContrastCheck" />
+
+                                        <ImageButton
+                                            android:id="@+id/more1"
+                                            android:layout_width="wrap_content"
+
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:background="?android:attr/selectableItemBackground"
+                                            android:layout_marginRight="15dp"
+
+
+                                            android:src="@drawable/more"
+                                            tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml,ImageContrastCheck" />
+
+                                    </RelativeLayout>
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="210dp"
+                                        android:src="@drawable/men"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop">
+                                    </com.google.android.material.imageview.ShapeableImageView>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Зачем карельский архитектор\nкарабкается по скалам и высекает\nбарельефы зайцев?"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="18.5dp"
+                                        android:padding="10dp">
+                                    </TextView>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Первое, что приходит в голову при виде..."
+                                        android:textSize="16dp"
+                                        android:paddingLeft="10dp">
+                                    </TextView>
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:layout_width="match_parent"
+                                        android:layout_height="60dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginRight="10dp"
+                                        app:cornerRadius="15dp"
+                                        android:backgroundTint="#FBCC01"
+                                        android:textAllCaps="false"
+                                        android:text="Подписаться"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold"
+                                        android:textSize="16dp">
+
+                                    </com.google.android.material.button.MaterialButton>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--PrivacyPolicy-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пролистывая далее, вы соглашаетесь с\nусловиями пользовательского соглашения\nЯндекс Дзен"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:padding="10dp">
+                </TextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--BottomBarLayout-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_nav"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
